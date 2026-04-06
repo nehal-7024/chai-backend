@@ -14,4 +14,14 @@ app.use(express.static("public"));  //serves static files from the public direct
 app.use(cookieParser());  
 
 
+//routes import
+
+import userRouter from "./routes/user.routes.js"; //can we give any variable name in the import statement? yes, we can give any variable name in the import statement, but it is a good practice to give a meaningful name that reflects the purpose of the imported module.
+
+
+//routes declaration
+app.use("/api/v1/users", userRouter)
+
+// https://localhost:8000/api/v1/users/register
+
 export { app };
